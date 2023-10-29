@@ -14,7 +14,7 @@ export const Header = () => {
           <li>
             <ButtonNav
               title='github'
-              href='https://github.com/ivanosquis10/bolivarium-conversor'
+              href='https://github.com/ivanosquis10/js-quiz-zustand'
             />
           </li>
           <li>
