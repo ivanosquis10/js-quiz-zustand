@@ -1,7 +1,7 @@
 import { create } from 'zustand'
 import confetti from 'canvas-confetti'
 import { js, react } from '../db/questions'
-import { type Question, TypeQuiz } from '../types'
+import { Question, TypeQuiz } from '@/interfaces'
 
 interface State {
   questions: Question[]
@@ -19,12 +19,6 @@ export const useQuestionStore = create<State>()((set, get) => {
     currentQuestion: 0,
 
     fetchQuestions: async (limit: number, quiz?: TypeQuiz | string) => {
-      console.log(limit, quiz)
-      // const res = await fetch(`http://localhost:5173/questions/${quiz}.json`)
-      // const data = await res.json()
-      // esto lo que hara es agarrar el array, desordenarlo y luego limitarlo con el numero que se le pase
-      // const questions = data.sort(() => Math.random() - 0.5).slice(0, limit)
-      // set({ questions })
       if (quiz === 'js') {
         const questions = js.sort(() => Math.random() - 0.5).slice(0, limit)
         return set({ questions })
@@ -104,16 +98,20 @@ export const useQuestionStore = create<State>()((set, get) => {
 //         currentQuestion: 0,
 
 //         fetchQuestions: async (limit: number, quiz?: TypeQuiz | string) => {
-
-//           const res = await fetch(
-//             `http://localhost:5173/questions/${quiz}.json`
-//           )
-//           // const res = await fetch('http://localhost:5173/questions/react.json')
-//           const data = await res.json()
-
+//           console.log(limit, quiz)
+//           // const res = await fetch(`http://localhost:5173/questions/${quiz}.json`)
+//           // const data = await res.json()
 //           // esto lo que hara es agarrar el array, desordenarlo y luego limitarlo con el numero que se le pase
-//           const questions = data.sort(() => Math.random() - 0.5).slice(0, limit)
-//           set({ questions })
+//           // const questions = data.sort(() => Math.random() - 0.5).slice(0, limit)
+//           // set({ questions })
+//           if (quiz === 'js') {
+//             const questions = js.sort(() => Math.random() - 0.5).slice(0, limit)
+//             return set({ questions })
+//           }
+//           if (quiz === 'react') {
+//             const questions = react.sort(() => Math.random() - 0.5).slice(0, limit)
+//             return set({ questions })
+//           }
 //         },
 
 //         selectAnswer: (questionId: number, answerIndex: number) => {

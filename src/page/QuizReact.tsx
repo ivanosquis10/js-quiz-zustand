@@ -2,7 +2,7 @@ import { useQuestionStore } from '../store/questions'
 
 import { Game } from '../Quiz/game/Game'
 import { StartBtn } from '../components/StartBtn'
-import { ReactLogo } from '../components/Icons'
+import { ReactLogo } from '../components/Icons/Icons'
 
 export const QuizReact = () => {
   const questions = useQuestionStore(state => state.questions)

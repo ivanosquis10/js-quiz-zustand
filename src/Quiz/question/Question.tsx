@@ -1,8 +1,8 @@
 import SyntaxHighLighter from 'react-syntax-highlighter'
 import { anOldHope } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 
-import { useQuestionStore } from '../../store/questions'
-import { type Question as QuestionType } from '../../types.d'
+import { useQuestionStore } from '@/store/questions'
+import type { Question as QuestionType } from '@/interfaces'
 
 const getBackgroundColor = (info: QuestionType, index: number) => {
   const { userSelectedAnswer, correctAnswer } = info
@@ -33,7 +33,7 @@ export const Question = ({ info }: { info: QuestionType }) => {
 
   return (
     <div className='max-w-md mx-auto md:w-full'>
-      <h3 className='text-base my-2 md:text-2xl font-bold md:p-2 text-center'>
+      <h3 className='my-2 text-base font-bold text-center md:text-2xl md:p-2'>
         {info.question}
       </h3>
 
