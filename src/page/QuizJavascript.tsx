@@ -2,7 +2,7 @@ import { useQuestionStore } from '../store/questions'
 
 import { Game } from '../Quiz/game/Game'
 import { StartBtn } from '../components/StartBtn'
-import { JavaScriptLogo } from '../components/Icons'
+import { JavaScriptLogo } from '../components/Icons/Icons'
 
 export function QuizJavascript() {
   const questions = useQuestionStore(state => state.questions)
