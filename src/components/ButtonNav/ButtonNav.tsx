@@ -8,6 +8,7 @@ type Props = {
   href: string
   title: string
 }
+
 type Icon = {
   [key: string]: ReactElement
 }
