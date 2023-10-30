@@ -12,9 +12,16 @@ type Props = {
 }
 
 export const QuizCard: React.FC<Props> = ({ item }) => {
+  const ringColor: Record<string, string> = {
+    javascript: 'ring-yellow-500',
+    react: 'ring-sky-500'
+  }
+
+  const color = ringColor[item.name.toLocaleLowerCase()] || 'ring-transparent'
+
   return (
     // <Link to={item.url}>
-    <Card className={`shadow-lg bg-zinc-900/50 transition-all ring-2 ring-transparent hover:ring-${item.color}`}>
+    <Card className={`shadow-lg bg-zinc-900/50 transition-all ring-2 ring-transparent hover:${color}`}>
       <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0">
         <CardTitle className="flex items-center gap-1">
           <Badge
