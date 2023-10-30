@@ -15,13 +15,13 @@ export const QuizLinks: QuizLink[] = [
     name: 'JavaScript',
     url: '/quiz-js',
     logo: JavaScriptLogo,
-    color: 'yellow-500'
+    color: 'yellow'
   },
   {
     id: 2,
     name: 'React',
     url: '/quiz-react',
     logo: ReactLogo,
-    color: 'sky-500'
+    color: 'sky'
   }
 ]
