@@ -21,7 +21,7 @@ export const QuizCard: React.FC<Props> = ({ item }) => {
 
   return (
     // <Link to={item.url}>
-    <Card className={`shadow-lg bg-zinc-900/50 transition-all ring-2 ring-transparent hover:${color}`}>
+    <Card className={`shadow-lg bg-zinc-900/50 transition-all hover:${color}`}>
       <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0">
         <CardTitle className="flex items-center gap-1">
           <Badge
