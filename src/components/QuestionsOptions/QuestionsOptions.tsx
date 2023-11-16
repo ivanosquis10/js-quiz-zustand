@@ -15,7 +15,7 @@ export const QuestionOptions = ({ answer, index, question }: Props) => {
   return (
     <div className={`border rounded-md md:h-[60px] py-3 px-5 ${backgroundStyle}`}>
       <button
-        className={`w-full text-center rounded-md text-sm flex items-center justify-center h-full`}
+        className="w-full text-center rounded-md text-sm flex items-center justify-center h-full"
         disabled={question.userSelectedAnswer != null}
         onClick={() => selectAnswer(question.id, index)}
       >

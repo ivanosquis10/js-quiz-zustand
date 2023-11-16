@@ -9,7 +9,7 @@ export const Question = ({ question }: { question: QuestionType }) => {
         {questionTitle}
       </h3>
 
-      {code && <QuestionCode code={code} />}
+      {(code != null) && <QuestionCode code={code} />}
 
       <div className='grid gap-2 md:grid-cols-2'>
         {answers.map((answer, index) => (

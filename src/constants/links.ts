@@ -5,6 +5,7 @@ export type QuizLink = {
   id: number
   name: string
   url: string
+  // eslint-disable-next-line no-empty-pattern
   logo: ({ }: LogoProps) => JSX.Element
   color: string
   type: TypeQuiz

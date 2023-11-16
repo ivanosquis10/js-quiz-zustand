@@ -28,6 +28,7 @@
     "noFallthroughCasesInSwitch": true
   },
   "include": [
+    "./eslintrc.cjs",
     "src"
   ],
   "references": [
