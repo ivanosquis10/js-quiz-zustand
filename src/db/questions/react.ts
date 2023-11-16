@@ -1,4 +1,6 @@
-export const react = [
+import type { Question } from '@/interfaces'
+
+export const react: Question[] = [
   {
     id: 1,
     question: '¿Qué es React?',
@@ -33,6 +35,7 @@ export const react = [
   {
     id: 5,
     question: "¿Qué es un 'state' en React?",
+    code: 'const [state, setState] = useState([])',
     answers: [
       'Un objeto que contiene datos que pueden cambiar en un componente',
       'Una función que se utiliza para actualizar el DOM',
@@ -44,6 +47,7 @@ export const react = [
   {
     id: 7,
     question: '¿Qué es un hook en React y para qué se utiliza?',
+    code: 'const { data } = useHookDebound()',
     answers: [
       'Una función que permite utilizar el estado y otros features de React en un componente funcional',
       'Una función que se utiliza para renderizar un componente en el DOM',

@@ -1,5 +1,3 @@
-// import { Badge } from '../ui/badge'
-
 export const HeadingApp = () => {
   return (
     <div className='p-2 mt-3 font-medium text-center md:mt-0 lg:w-8/12 rounded-xl lg:bg-zinc-900/50 lg:border lg:shadow'>
@@ -10,7 +8,6 @@ export const HeadingApp = () => {
         Aquí encontrarás diferentes{' '}
         <span className='font-bold text-accent-foreground'>Quizzz</span> en relación a{' '}
         <p className='inline-flex items-center font-semibold underline transition-colors rounded-md cursor-default focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-accent-foreground'>Librerías/Frameworks</p>
-        {/* <Badge variant='outline' className='text-base bg-zinc-950'>Librerías/Frameworks</Badge> */}
       </p>
     </div>
   )

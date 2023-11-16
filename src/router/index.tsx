@@ -1,21 +1,18 @@
 import { createBrowserRouter } from 'react-router-dom'
-import { QuizReact } from '../page/QuizReact'
-import { QuizJavascript } from '../page/QuizJavascript'
-import { NotFound } from '../page/NotFound'
 import App from '@/App'
+import { Hero } from '@/components'
+import { DynamicQuizPage, NotFound } from '@/page'
 
 export const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
-  },
-  {
-    path: '/quiz-js',
-    element: <QuizJavascript />,
-  },
-  {
-    path: '/quiz-react',
-    element: <QuizReact />,
+    children: [
+      { path: '/', element: <Hero /> },
+      // { path: '/quiz-js', element: <QuizJavascript /> },
+      // { path: '/quiz-react', element: <QuizReact /> },
+      { path: '/quiz/:id', element: <DynamicQuizPage /> }
+    ]
   },
   {
     path: '*',

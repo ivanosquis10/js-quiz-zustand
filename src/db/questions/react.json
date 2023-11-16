@@ -43,6 +43,7 @@
   {
     "id": 7,
     "question": "¿Qué es un hook en React y para qué se utiliza?",
+    "code": "const { data } = useHookDebound()",
     "answers": [
       "Una función que permite utilizar el estado y otros features de React en un componente funcional",
       "Una función que se utiliza para renderizar un componente en el DOM",

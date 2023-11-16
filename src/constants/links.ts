@@ -1,11 +1,14 @@
-import { JavaScriptLogo, ReactLogo } from '@/components/Icons/Icons';
+import { JavaScriptLogo, ReactLogo } from '@/components/Icons/Icons'
+import type { TypeQuiz, LogoProps } from '@/interfaces'
 
 export type QuizLink = {
   id: number
   name: string
   url: string
-  logo: () => JSX.Element
+  // eslint-disable-next-line no-empty-pattern
+  logo: ({ }: LogoProps) => JSX.Element
   color: string
+  type: TypeQuiz
 }
 
 
@@ -15,13 +18,15 @@ export const QuizLinks: QuizLink[] = [
     name: 'JavaScript',
     url: '/quiz-js',
     logo: JavaScriptLogo,
-    color: 'yellow'
+    color: 'yellow',
+    type: 'js'
   },
   {
     id: 2,
     name: 'React',
     url: '/quiz-react',
     logo: ReactLogo,
-    color: 'sky'
+    color: 'sky',
+    type: 'react'
   }
 ]

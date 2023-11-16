@@ -1,12 +1,12 @@
 import { create } from 'zustand'
 import confetti from 'canvas-confetti'
-import { js, react } from '../db/questions'
-import { Question, TypeQuiz } from '@/interfaces'
+import { js, react } from '@/db/questions'
+import type { Question, TypeQuiz } from '@/interfaces'
 
 interface State {
   questions: Question[]
   currentQuestion: number
-  fetchQuestions: (limit: number, quiz?: TypeQuiz) => Promise<void>
+  fetchQuestions: (limit: number, quiz?: TypeQuiz) => void
   selectAnswer: (questionId: number, answerIndex: number) => void
   goNextQuestion: () => void
   goPreviousQuestion: () => void
@@ -18,11 +18,12 @@ export const useQuestionStore = create<State>()((set, get) => {
     questions: [],
     currentQuestion: 0,
 
-    fetchQuestions: async (limit: number, quiz?: TypeQuiz | string) => {
+    fetchQuestions: (limit: number, quiz?: TypeQuiz | string) => {
       if (quiz === 'js') {
         const questions = js.sort(() => Math.random() - 0.5).slice(0, limit)
         return set({ questions })
       }
+
       if (quiz === 'react') {
         const questions = react.sort(() => Math.random() - 0.5).slice(0, limit)
         return set({ questions })
@@ -30,7 +31,7 @@ export const useQuestionStore = create<State>()((set, get) => {
     },
 
     selectAnswer: (questionId: number, answerIndex: number) => {
-      const { questions } = get()
+      const { questions, goNextQuestion } = get()
 
       // creamos una copia profunda del estado con el structureClone
       const newQuestions = structuredClone(questions)
@@ -46,12 +47,18 @@ export const useQuestionStore = create<State>()((set, get) => {
       // averiguamos si el usuario le dio a la respuesta correcta
       const isCorrectUserAnswer = questionInfo.correctAnswer === answerIndex
 
-      if (isCorrectUserAnswer) confetti()
+      if (isCorrectUserAnswer) {
+        confetti()
+      }
+
+      setTimeout(() => {
+        goNextQuestion()
+      }, 2000)
 
       // cambiar la informacion en la copia de la pregunta
       newQuestions[questionIndex] = {
-        ...questionInfo, // hacemos una copia de toda la informacion
-        isCorrectUserAnswer, // le pasamos si es correcta la respuesta del usuario
+        ...questionInfo, // hacemos una copia de toda la informacion que no queremos modificar
+        isCorrectUserAnswer, // le pasamos un valor boolean de la respuesta del usuario
         userSelectedAnswer: answerIndex, // nos ayudara visualmente para darle un feedback al usuario, si respondio bien o mal
       }
 
