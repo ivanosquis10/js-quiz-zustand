@@ -36,16 +36,16 @@ const quizData: QuizData = {
 export const QuizHeader = ({ type }: Props) => {
   const { title, description, color } = quizData[type]
 
-  const logoStyle = 'border-2 rounded-md shadow w-14 h-14 sm:w-24 sm:h-24 bg-zinc-900 border-opacity-60'
+  const logoStyle = 'border-2 rounded-md shadow w-20 h-20 sm:w-24 sm:h-24 bg-zinc-900 border-opacity-60'
 
   const logos: LogoData = {
     react: <ReactLogo className={`${logoStyle} ${color}`} />,
     js: <JavaScriptLogo className={`${logoStyle} ${color}`} />
   }
   return (
-    <header className='flex items-center gap-1 lg:gap-3'>
+    <header className='flex flex-col items-center gap-1 sm:flex-row lg:gap-3'>
       {logos[type]}
-      <div className=''>
+      <div className='text-center sm:text-start'>
         <h2 className='text-3xl font-bold md:text-5xl'>{title}</h2>
         <p className='text-sm font-semibold lg:text-base text-muted-foreground'>{description}</p>
       </div>
