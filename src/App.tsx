@@ -1,13 +1,13 @@
-import { ThemeProvider, Header, Hero, FooterApp } from '@/components'
+import { Outlet } from 'react-router-dom'
+import { ThemeProvider, Header } from '@/components'
 
 const App = () => {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme" >
       <Header />
       <main className='md:mx-auto md:container'>
-        <Hero />
+        <Outlet />
       </main>
-      <FooterApp />
     </ThemeProvider>
   )
 }

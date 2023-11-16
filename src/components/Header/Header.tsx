@@ -23,9 +23,6 @@ export const Header = () => {
               href='https://twitter.com/ivanosquis13'
             />
           </li>
-          {/* <li>
-            <ToggleButton />
-          </li> */}
         </ul>
       </nav>
     </header>
